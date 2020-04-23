@@ -10,25 +10,25 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserDaoservice {
 	
-	private static List<User> users=new ArrayList<>();
+	private static List<User1> users=new ArrayList<>();
 	private static int userCount=3;
 	
 	static {
-		users.add(new User(1, "sandeep", new Date()));
-		users.add(new User(2, "kumar", new Date()));
-		users.add(new User(3, "tiwari", new Date()));
+		users.add(new User1(1, "sandeep", new Date()));
+		users.add(new User1(2, "kumar", new Date()));
+		users.add(new User1(3, "tiwari", new Date()));
 	}
 	
 	
 	//public List<User> findAll();
 	
-	public List<User> findAll(){
+	public List<User1> findAll(){
 		return users;
 	}
 	
 	// public User save(User user)
 	
-	public User save(User user) {
+	public User1 save(User1 user) {
 		if(user.getId()==null) {
 			user.setId(++userCount);
 		}
@@ -36,9 +36,9 @@ public class UserDaoservice {
 		return user;
 	}
 	//public User findOne(int id)
-	public User findOne(int id)
+	public User1 findOne(int id)
 	{
-		for(User user:users) {
+		for(User1 user:users) {
 			if(user.getId()==id) {
 				return user;
 				
@@ -51,12 +51,12 @@ public class UserDaoservice {
 
 	
 	//public User findOne(int id)
-	public User DeleteById(int id)
+	public User1 DeleteById(int id)
 	{
-		Iterator<User> iterator=users.iterator();
+		Iterator<User1> iterator=users.iterator();
 		
 		while(iterator.hasNext()) {
-			User user=iterator.next();
+			User1 user=iterator.next();
 			if(user.getId()==id) {
 				iterator.remove();
 				return user;

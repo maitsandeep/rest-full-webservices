@@ -1,14 +1,14 @@
 package com.rest.webservices.restfullwebservices.filtering;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 
 
+@JsonFilter("someBeanFilter")
 public class SomeBean {
 	private String filed1;
-	@JsonIgnore
 	private String filed2;
-	
-@JsonIgnore
+	//@JsonIgnore
 	private String filed3;
 	public SomeBean(String filed1, String filed2, String filed3) {
 		super();
